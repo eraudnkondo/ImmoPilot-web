@@ -1,0 +1,23 @@
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
+
+const Layout = () => {
+  return (
+    <div className="min-h-screen bg-gray-100 flex flex-col">
+      
+      <Header />
+
+      {/* Contenu des pages */}
+      <main className="grow">
+        <Outlet />
+      </main>
+
+      <Footer />
+
+    </div>
+  );
+};
+
+export default Layout;
