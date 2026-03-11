@@ -64,7 +64,7 @@ const GestionLocative = () => {
     <>
       <HeaderGestion />
 
-      {/* Hero section */}
+      
       <section className="relative bg-gradient-to-br from-[#8A9BFF] to-[#6F8BFF] text-white py-20 px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <FaBuilding className="w-full h-full text-white" />
@@ -91,7 +91,7 @@ const GestionLocative = () => {
         </div>
       </section>
 
-      {/* Statistiques */}
+      
       <section className="bg-gray-50 py-16 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
@@ -103,7 +103,7 @@ const GestionLocative = () => {
         </div>
       </section>
 
-      {/* Fonctionnalités avec liens */}
+    
       <section className="bg-gray-100 py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">
@@ -131,7 +131,7 @@ const GestionLocative = () => {
         </div>
       </section>
 
-      {/* Appel à l'action */}
+    
       <section className="bg-[#8A9BFF] py-20 px-6">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-4xl font-bold mb-6">Prêt à optimiser votre gestion locative ?</h2>

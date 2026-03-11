@@ -5,7 +5,7 @@ import {
   FaEnvelope, FaPhone, FaArrowRight, FaBuilding,
   FaTrophy, FaShieldAlt, FaChartLine, FaUsers
 } from "react-icons/fa";
-import HeaderGestionLocataires from "../components/HeaderGestionLocataires"; // ✅ import correct
+import HeaderGestionLocataires from "../components/HeaderGestionLocataires"; 
 import { Link } from "react-router-dom";
 
 const GestionLocataires = () => {
@@ -80,9 +80,9 @@ const GestionLocataires = () => {
 
   return (
     <>
-      <HeaderGestionLocataires /> {/* ✅ remplacé HeaderGestion par HeaderGestionLocataires */}
+      <HeaderGestionLocataires /> 
 
-      {/* Hero section */}
+     
       <section className="relative bg-gradient-to-br from-[#8A9BFF] to-[#6F8BFF] text-white py-20 px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <FaBuilding className="w-full h-full text-white" />
@@ -121,7 +121,7 @@ const GestionLocataires = () => {
         </div>
       </section>
 
-      {/* Fonctionnalités */}
+      
       <section className="bg-gray-100 py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">
@@ -148,7 +148,7 @@ const GestionLocataires = () => {
         </div>
       </section>
 
-      {/* Section Leader */}
+      
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -174,7 +174,7 @@ const GestionLocataires = () => {
         </div>
       </section>
 
-      {/* Appel à l'action */}
+      
       <section className="bg-[#8A9BFF] py-20 px-6">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-4xl font-bold mb-6">Prêt à simplifier la gestion de vos locataires ?</h2>

@@ -5,7 +5,7 @@ import {
   FaRuler, FaCalendarAlt, FaArrowRight, FaBuilding,
   FaTrophy, FaShieldAlt, FaChartLine, FaUsers
 } from "react-icons/fa";
-import HeaderGestionBiens from "../components/HeaderGestionBiens"; // ✅ import corrigé
+import HeaderGestionBiens from "../components/HeaderGestionBiens"; 
 import { Link } from "react-router-dom";
 
 const GestionBiens = () => {
@@ -15,7 +15,7 @@ const GestionBiens = () => {
       title: "Ajout de biens",
       description:
         "Enregistrez facilement vos biens immobiliers avec toutes leurs caractéristiques : type, surface, nombre de pièces, étage, etc.",
-      // Tu pourras ajouter un lien ici plus tard, par exemple : link: "/gestion-biens/ajout"
+     
     },
     {
       icon: <FaMapMarkerAlt className="text-[#8A9BFF] text-3xl" />,
@@ -81,9 +81,9 @@ const GestionBiens = () => {
 
   return (
     <>
-      <HeaderGestionBiens /> {/* ✅ remplacé HeaderGestion par HeaderGestionBiens */}
+      <HeaderGestionBiens /> 
 
-      {/* Hero section */}
+      
       <section className="relative bg-gradient-to-br from-[#8A9BFF] to-[#6F8BFF] text-white py-20 px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <FaBuilding className="w-full h-full text-white" />
@@ -110,7 +110,7 @@ const GestionBiens = () => {
         </div>
       </section>
 
-      {/* Statistiques */}
+      
       <section className="bg-gray-50 py-16 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
@@ -122,7 +122,7 @@ const GestionBiens = () => {
         </div>
       </section>
 
-      {/* Fonctionnalités */}
+  
       <section className="bg-gray-100 py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">
@@ -149,7 +149,7 @@ const GestionBiens = () => {
         </div>
       </section>
 
-      {/* Section Leader */}
+      
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -175,7 +175,7 @@ const GestionBiens = () => {
         </div>
       </section>
 
-      {/* Appel à l'action */}
+      
       <section className="bg-[#8A9BFF] py-20 px-6">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-4xl font-bold mb-6">Prêt à organiser vos biens ?</h2>

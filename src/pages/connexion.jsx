@@ -19,15 +19,14 @@ const Connexion = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Connexion :", formData);
-    // Ajouter ici la logique de connexion (Firebase ou API)
+   
   };
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
-      {/* Header identique à l'accueil */}
+      
       <HeaderAuth />
 
-      {/* Contenu principal */}
       <div className=" mt-30 flex items-center justify-center px-4 py-12">
         <div className="bg-white p-10 rounded-2xl shadow-lg w-full max-w-md">
           <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
@@ -80,7 +79,7 @@ const Connexion = () => {
         </div>
       </div>
 
-      {/* Footer avec la même couleur que le header */}
+
       <Footer className="bg-[#8A9BFF] text-white" />
     </div>
   );
