@@ -8,12 +8,12 @@ const HeaderGestion = () => {
 
   return (
     <header style={styles.header}>
-      {/* Logo */}
+      
       <Link to="/" style={styles.logo}>
         IMMOPILOT
       </Link>
 
-      {/* Hamburger */}
+
       <button
         style={styles.menuButton}
         onClick={() => setMenuOpen(!menuOpen)}
@@ -23,7 +23,7 @@ const HeaderGestion = () => {
         <div style={{ ...styles.bar, ...(menuOpen ? styles.bar3Open : {}) }} />
       </button>
 
-      {/* Menu mobile */}
+    
       {menuOpen && (
         <div style={styles.mobileMenu}>
           <NavLink to="/" style={styles.mobileLink} onClick={closeMenu}>

@@ -9,12 +9,12 @@ const Header = () => {
   return (
     <header style={styles.header}>
       
-      {/* Logo */}
+      
       <Link to="/" style={styles.logo}>
         IMMOPILOT
       </Link>
 
-      {/* Hamburger */}
+    
       <button
         style={styles.menuButton}
         onClick={() => setMenuOpen(!menuOpen)}
@@ -24,15 +24,15 @@ const Header = () => {
         <div style={{ ...styles.bar, ...(menuOpen ? styles.bar3Open : {}) }} />
       </button>
 
-      {/* Menu mobile */}
+      
       {menuOpen && (
         <div style={styles.mobileMenu}>
-          {/* Lien vers l'accueil */}
+
           <NavLink to="/" style={styles.mobileLink} onClick={closeMenu}>
             Accueil
           </NavLink>
 
-          {/* Sous-menu Nos Services */}
+
           <div style={styles.subMenu}>
             <span style={styles.subMenuTitle}>Nos services</span>
             <NavLink to="GestionLocative" style={styles.mobileLink} onClick={closeMenu}>
@@ -46,7 +46,7 @@ const Header = () => {
             </NavLink>
           </div>
 
-          {/* Ancres vers sections sur la page d'accueil */}
+
           <NavLink to="/#howItWorks" style={styles.mobileLink} onClick={closeMenu}>
             Comment ça marche
           </NavLink>
@@ -54,7 +54,7 @@ const Header = () => {
             Témoignages / Résultats
           </NavLink>
 
-          {/* Pages dédiées */}
+
           <NavLink to="/espace-client" style={styles.mobileLink} onClick={closeMenu}>
             Espace client
           </NavLink>
@@ -62,7 +62,7 @@ const Header = () => {
             Espace agence / Propriétaire
           </NavLink>
 
-          {/* Auth */}
+          
           <NavLink to="/connexion" style={styles.mobileLink} onClick={closeMenu}>
             Connexion
           </NavLink>
@@ -70,7 +70,7 @@ const Header = () => {
             Inscription
           </NavLink>
 
-          {/* Contact / Assistance */}
+          
           <NavLink to="/contact" style={styles.mobileLink} onClick={closeMenu}>
             Contact / Assistance
           </NavLink>
@@ -137,8 +137,8 @@ const styles = {
     position: 'absolute',
     top: '70px',
     right: 0,
-    width: '500px',                 // ✅ encore plus large : 500px
-    maxWidth: 'calc(100vw - 2rem)',  // garde une marge sur très petits écrans
+    width: '500px',                 
+    maxWidth: 'calc(100vw - 2rem)',  
     backgroundColor: '#f3f4f6',
     borderLeft: '1px solid #e5e7eb',
     borderBottom: '1px solid #e5e7eb',
@@ -146,20 +146,20 @@ const styles = {
     padding: '1.5rem',
     display: 'flex',
     flexDirection: 'column',
-    gap: '1rem',                    // espacement accru
+    gap: '1rem',                    
     boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
   },
 
   mobileLink: {
     textDecoration: 'none',
-    padding: '0.9rem 1.2rem',        // plus de padding pour une zone tactile confortable
+    padding: '0.9rem 1.2rem',        
     borderRadius: '8px',
     fontWeight: 500,
     color: '#374151',
     border: '1px solid #d1d5db',
     textAlign: 'center',
     transition: 'all 0.3s',
-    fontSize: '1.2rem',               // texte plus grand
+    fontSize: '1.2rem',               
   },
 
   subMenu: {
@@ -172,7 +172,7 @@ const styles = {
     fontWeight: 'bold',
     padding: '0.9rem 1.2rem',
     color: '#1f2937',
-    fontSize: '1.3rem',               // titre du sous‑menu plus grand
+    fontSize: '1.3rem',               
   },
 };
 

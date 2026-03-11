@@ -4,12 +4,12 @@ import temoinage from "../assets/images/temoinage.png";
 const Testimonials = () => {
   return (
     <section className=" px-4 w-full">
-      {/* Bannière avec image de fond et titre - pleine largeur */}
+      
       <div 
         className="relative w-full h-64 md:h-80 mb-16 rounded-2xl overflow-hidden bg-cover bg-center -mt-5"
         style={{ backgroundImage: `url(${temoinage})` }}
       >
-        {/* Overlay plus foncé */}
+        
         <div className="absolute inset-0 bg-black/70"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white px-4 text-center">
@@ -18,9 +18,9 @@ const Testimonials = () => {
         </div>
       </div>
 
-      {/* Cartes de témoignages - pleine largeur (sans conteneur limité) */}
+      
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 -mt-5">
-        {/* Témoignage 1 */}
+        
         <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
           <div className="flex text-yellow-400 mb-4 text-xl">⭐⭐⭐⭐⭐</div>
           <p className="text-gray-700 italic mb-4">
@@ -30,7 +30,7 @@ const Testimonials = () => {
           <div className="text-sm text-gray-500">Propriétaire depuis 3 ans</div>
         </div>
 
-        {/* Témoignage 2 */}
+        
         <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
           <div className="flex text-yellow-400 mb-4 text-xl">⭐⭐⭐⭐⭐</div>
           <p className="text-gray-700 italic mb-4">
@@ -40,7 +40,7 @@ const Testimonials = () => {
           <div className="text-sm text-gray-500">Gestionnaire de patrimoine</div>
         </div>
 
-        {/* Témoignage 3 */}
+        
         <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition">
           <div className="flex text-yellow-400 mb-4 text-xl">⭐⭐⭐⭐</div>
           <p className="text-gray-700 italic mb-4">
@@ -51,7 +51,6 @@ const Testimonials = () => {
         </div>
       </div>
 
-      {/* Section chiffres clés - toujours limitée pour une meilleure lisibilité sur grands écrans */}
       <div className="max-w-7xl mx-auto">
         <div className="bg-white py-12 px-6 rounded-2xl shadow-md">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-800 text-center mb-10">

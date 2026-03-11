@@ -9,7 +9,7 @@ const Layout = () => {
       
       <Header />
 
-      {/* Contenu des pages */}
+     
       <main className="grow">
         <Outlet />
       </main>

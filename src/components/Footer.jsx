@@ -6,7 +6,7 @@ const Footer = () => {
       
       <div className="max-w-7xl mx-auto px-8 py-12 flex flex-col md:flex-row justify-between gap-10">
 
-        {/* Colonne 1 */}
+        
         <div className="md:w-1/3">
           <h2 className="text-xl font-bold">IMMOPILOT</h2>
           <p className="mt-4 text-gray-600">
@@ -15,7 +15,7 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Colonne 2 */}
+
         <div>
           <h3 className="font-semibold mb-3">Produits</h3>
           <ul className="space-y-2 text-gray-600">
@@ -42,7 +42,7 @@ const Footer = () => {
 
       </div>
 
-      {/* Bas du footer */}
+
       <div className="border-t border-gray-300 text-center py-4 text-sm text-gray-600">
         © {new Date().getFullYear()} IMMOPILOT — Tous droits réservés.
       </div>

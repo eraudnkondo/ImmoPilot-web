@@ -4,18 +4,18 @@ import patrimoine from "../assets/images/patrimoine.png";
 const WhyUs = () => {
   return (
     <div className=" w-full">
-      {/* GRANDE IMAGE PATRIMOINE AVEC BOUTON “VOIR PLUS” */}
-      <div className="relative w-full px-0 mb-8">   {/* ← mb-16 → mb-8 : espace réduit */}
+      
+      <div className="relative w-full px-0 mb-8">  
         <img
           src={patrimoine}
           alt="Patrimoine"
           className="w-full h-[650px] md:h-[800px] object-cover shadow-lg"
         />
 
-        {/* Overlay semi-transparent */}
+      
         <div className="absolute inset-0 bg-black/25"></div>
 
-        {/* Texte centré */}
+        
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Gérer vos loyers et votre patrimoine en toute sérénité
@@ -26,7 +26,7 @@ const WhyUs = () => {
         </div>
       </div>
 
-      {/* SECTION COMMENT ÇA MARCHE */}
+      
       <div
         id="howItWorks"
         className="max-w-7xl mx-auto py-16 px-6  -mt-15"

@@ -9,12 +9,12 @@ const HeaderGestionBiens = () => {
   return (
     <header style={styles.header}>
       
-      {/* Logo */}
+      
       <Link to="/" style={styles.logo}>
         IMMOPILOT
       </Link>
 
-      {/* Bouton Hamburger */}
+      
       <button
         style={styles.menuButton}
         onClick={() => setMenuOpen(!menuOpen)}

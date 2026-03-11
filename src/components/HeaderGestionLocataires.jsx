@@ -24,7 +24,7 @@ const HeaderGestionLocataires = () => {
           IMMOPILOT
         </Link>
 
-        {/* Navigation desktop */}
+      
         <nav className="hidden md:flex gap-8 items-center">
           <NavLink to="/gestion-locataires/ajout" className={navStyle}>
             Ajouter un locataire
@@ -40,7 +40,7 @@ const HeaderGestionLocataires = () => {
           </NavLink>
         </nav>
 
-        {/* Bouton retour accueil desktop amélioré */}
+      
         <Link
           to="/"
           className="hidden md:flex items-center gap-3  text-gray-800 px-6 py-3 rounded-full hover:bg-[#6F8BFF] transition transform hover:scale-105 shadow-md text-lg font-semibold"
@@ -49,7 +49,7 @@ const HeaderGestionLocataires = () => {
           ACCEUIL
         </Link>
 
-        {/* Hamburger mobile */}
+    
         <button
           className="md:hidden flex flex-col justify-between w-8 h-6 bg-transparent border-none cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -71,7 +71,7 @@ const HeaderGestionLocataires = () => {
           />
         </button>
 
-        {/* Menu mobile */}
+        
         {menuOpen && (
           <div className="absolute top-16 right-0 w-80 max-w-[calc(100vw-2rem)] bg-gray-100 border-l border-b border-gray-200 rounded-bl-lg p-6 flex flex-col gap-4 shadow-lg md:hidden text-lg">
             <NavLink
