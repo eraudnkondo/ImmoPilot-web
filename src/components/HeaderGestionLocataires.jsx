@@ -16,10 +16,10 @@ const HeaderGestionLocataires = () => {
     <>
       <header className="flex justify-between items-center px-6 py-5 bg-gray-100 border-b border-gray-200 sticky top-0 z-50">
         
-        {/* Logo */}
+        
         <Link
           to="/"
-          className="text-4xl font-extrabold tracking-widest text-amber-600 uppercase no-underline"
+          className="text-4xl #b8860b tracking-widest text-amber-600 uppercase no-underline"
         >
           IMMOPILOT
         </Link>

@@ -1,168 +1,78 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 
-const HeaderGestionBiens = () => {
+const HeaderGestionLocataires = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
   const closeMenu = () => setMenuOpen(false);
 
+  const navStyle = ({ isActive }) =>
+    `relative font-semibold text-xl transition pb-1
+     ${isActive ? "text-[#8A9BFF] after:w-full" : "text-gray-700 after:w-0 hover:after:w-full"}
+     after:content-[''] after:absolute after:left-0 after:-bottom-1
+     after:h-[3px] after:bg-[#8A9BFF] after:transition-all`;
+
   return (
-    <header style={styles.header}>
-      
-      
-      <Link to="/" style={styles.logo}>
-        IMMOPILOT
-      </Link>
+    <>
+      <header className="flex justify-between items-center px-6 py-5 bg-gray-100 border-b border-gray-200 sticky top-0 z-50">
+        
+       
+        <Link
+          to="/"
+          className="text-4xl f#b8860b tracking-widest text-amber-600 uppercase no-underline"
+        >
+          IMMOPILOT
+        </Link>
 
       
-      <button
-        style={styles.menuButton}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <div style={{ ...styles.bar, ...(menuOpen ? styles.bar1Open : {}) }} />
-        <div style={{ ...styles.bar, ...(menuOpen ? styles.bar2Open : {}) }} />
-        <div style={{ ...styles.bar, ...(menuOpen ? styles.bar3Open : {}) }} />
-      </button>
-
-      {/* Menu Gestion */}
-      {menuOpen && (
-        <div style={styles.mobileMenu}>
-
-          <NavLink
-            to="/gestionbiens"
-            style={styles.mobileLink}
-            onClick={closeMenu}
-          >
+        <nav className="hidden md:flex gap-8 items-center">
+          <NavLink to="/GestionBiens" className={navStyle}>
             Tableau de bord
           </NavLink>
-
-          <NavLink
-            to="/mes-biens"
-            style={styles.mobileLink}
-            onClick={closeMenu}
-          >
+          <NavLink to="/Mes biens" className={navStyle}>
             Mes biens
           </NavLink>
-
-          <NavLink
-            to="/locataires"
-            style={styles.mobileLink}
-            onClick={closeMenu}
-          >
+          <NavLink to="/Locatairs" className={navStyle}>
             Locataires
           </NavLink>
-
-          <NavLink
-            to="/paiements"
-            style={styles.mobileLink}
-            onClick={closeMenu}
-          >
+          <NavLink to="/Paiements" className={navStyle}>
             Paiements
           </NavLink>
+        </nav>
 
-          <NavLink
-            to="/rapports"
-            style={styles.mobileLink}
-            onClick={closeMenu}
-          >
-            Rapports
-          </NavLink>
+      
+        <Link
+          to="/"
+          className="hidden md:flex items-center gap-3  text-gray-800 px-6 py-3 rounded-full hover:bg-[#6F8BFF] transition transform hover:scale-105 shadow-md text-lg font-semibold"
+        >
+          <FaArrowLeft className="text-lg" />
+          ACCEUIL
+        </Link>
 
-          <NavLink
-            to="/"
-            style={styles.mobileLink}
-            onClick={closeMenu}
-          >
-            ← Retour au site
-          </NavLink>
-
-        </div>
-      )}
-    </header>
+    
+        <button
+          className="md:hidden flex flex-col justify-between w-8 h-6 bg-transparent border-none cursor-pointer"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <div
+            className={`w-full h-0.5 bg-gray-800 rounded transition-all duration-300 ${
+              menuOpen ? "rotate-45 translate-y-1.5" : ""
+            }`}
+          />
+          <div
+            className={`w-full h-0.5 bg-gray-800 rounded transition-all duration-300 ${
+              menuOpen ? "opacity-0" : ""
+            }`}
+          />
+          <div
+            className={`w-full h-0.5 bg-gray-800 rounded transition-all duration-300 ${
+              menuOpen ? "-rotate-45 -translate-y-1.5" : ""
+            }`}
+          />
+        </button>
+      </header>
+    </>
   );
 };
 
-const styles = {
-  header: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: "1rem 2rem",
-    backgroundColor: "#f3f4f6",
-    borderBottom: "1px solid #e5e7eb",
-    position: "sticky",
-    top: 0,
-    zIndex: 1000,
-  },
-
-  logo: {
-    fontSize: "2rem",
-    fontWeight: "bold",
-    letterSpacing: "3px",
-    color: "#b8860b",
-    textTransform: "uppercase",
-    textDecoration: "none",
-  },
-
-  menuButton: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    width: "25px",
-    height: "18px",
-    background: "transparent",
-    border: "none",
-    cursor: "pointer",
-  },
-
-  bar: {
-    width: "100%",
-    height: "3px",
-    backgroundColor: "#374151",
-    borderRadius: "2px",
-    transition: "all 0.3s ease",
-  },
-
-  bar1Open: {
-    transform: "rotate(45deg) translate(5px, 5px)",
-  },
-
-  bar2Open: {
-    opacity: 0,
-  },
-
-  bar3Open: {
-    transform: "rotate(-45deg) translate(5px, -5px)",
-  },
-
-  mobileMenu: {
-    position: "absolute",
-    top: "70px",
-    right: 0,
-    width: "500px",
-    maxWidth: "calc(100vw - 2rem)",
-    backgroundColor: "#f3f4f6",
-    borderLeft: "1px solid #e5e7eb",
-    borderBottom: "1px solid #e5e7eb",
-    borderRadius: "0 0 8px 8px",
-    padding: "1.5rem",
-    display: "flex",
-    flexDirection: "column",
-    gap: "1rem",
-    boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
-  },
-
-  mobileLink: {
-    textDecoration: "none",
-    padding: "0.9rem 1.2rem",
-    borderRadius: "8px",
-    fontWeight: 500,
-    color: "#374151",
-    border: "1px solid #d1d5db",
-    textAlign: "center",
-    transition: "all 0.3s",
-    fontSize: "1.2rem",
-  },
-};
-
-export default HeaderGestionBiens;
+export default HeaderGestionLocataires;
