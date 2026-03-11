@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./components/layout";
-import AjouterBien from "./pages/AjouterBien";
+
 import HomePage from "./pages/homepage";
 import EspaceAgence from "./pages/EspaceAgence";
 import EspaceClient from "./pages/EspaceClient";
@@ -11,6 +11,7 @@ import Inscription from "./pages/inscription";
 import GestionLocative from "./pages/GestionLocative";
 import GestionBiens from "./pages/GestionBiens"; 
 import GestionLocataires from './pages/GestionLocataires';
+import AjouterBien from "./pages/AjouterBien";
 
 function App() {
   return (

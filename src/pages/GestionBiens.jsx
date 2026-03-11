@@ -26,6 +26,7 @@ const GestionBiens = () => {
       title: "Ajout de biens",
       description:
         "Enregistrez facilement vos biens immobiliers avec toutes leurs caractéristiques : type, surface, nombre de pièces, étage, etc.",
+      link: "/ajouter-bien",
     },
     {
       icon: <FaMapMarkerAlt className="text-[#8A9BFF] text-3xl" />,
@@ -37,11 +38,11 @@ const GestionBiens = () => {
       icon: <FaImages className="text-[#8A9BFF] text-3xl" />,
       title: "Gestion des photos",
       description:
-        "Téléchargez et organisez plusieurs photos par bien, avec possibilité de créer des visites virtuelles ou des plans.",
+        "Téléchargez et organisez plusieurs photos par bien, avec possibilité de créer des visites virtuelles.",
     },
     {
       icon: <FaEuroSign className="text-[#8A9BFF] text-3xl" />,
-      title: "Suivi financier",
+      title: "Suivi financier par bien",
       description:
         "Consultez les revenus locatifs, charges et taxes pour chaque bien et visualisez la rentabilité.",
     },
@@ -49,13 +50,13 @@ const GestionBiens = () => {
       icon: <FaRuler className="text-[#8A9BFF] text-3xl" />,
       title: "Caractéristiques techniques",
       description:
-        "Stockez les surfaces, diagnostics (DPE, amiante, plomb) et documents associés.",
+        "Stockez les surfaces et diagnostics techniques ainsi que les documents associés.",
     },
     {
       icon: <FaCalendarAlt className="text-[#8A9BFF] text-3xl" />,
       title: "Historique et travaux",
       description:
-        "Gardez une trace des travaux effectués, des dates d'achat et de l'évolution de valeur.",
+        "Gardez une trace des travaux effectués et de l’évolution de valeur du bien.",
     },
   ];
 
@@ -105,34 +106,21 @@ const GestionBiens = () => {
           </h1>
 
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10">
-            Centralisez toutes les informations de vos propriétés : fiches
-            détaillées, photos, documents techniques et suivi financier.
+            Centralisez toutes les informations de vos propriétés : fiches,
+            photos, documents techniques et suivi financier.
           </p>
 
-          {/* BOUTONS ACTION */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-
             <Link
-              to="/ajouter-bien"
-              className="bg-white text-[#6F8BFF] px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition flex items-center gap-2"
+              to="/inscription"
+              className="bg-white text-[#6F8BFF] px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2"
             >
-              AjouterBien <FaHome />
+              Commencer <FaArrowRight />
             </Link>
 
-            <Link
-              to="/mes-biens"
-              className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-[#6F8BFF] transition flex items-center gap-2"
-            >
-              Voir mes biens <FaBuilding />
-            </Link>
-
-            <Link
-              to="/dashboard-biens"
-              className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-[#6F8BFF] transition flex items-center gap-2"
-            >
-              Tableau de bord <FaChartLine />
-            </Link>
-
+            <button className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-white hover:text-[#6F8BFF] transition">
+              Voir une démo
+            </button>
           </div>
         </div>
       </section>
@@ -167,32 +155,41 @@ const GestionBiens = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2"
-              >
+            {features.map((feature, index) => {
 
-                <div className="w-14 h-14 bg-[#8A9BFF]/10 rounded-xl flex items-center justify-center mb-6">
-                  {feature.icon}
+              const Card = (
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+
+                  <div className="w-14 h-14 bg-[#8A9BFF]/10 rounded-xl flex items-center justify-center mb-6">
+                    {feature.icon}
+                  </div>
+
+                  <h3 className="text-xl font-semibold mb-3 text-gray-800">
+                    {feature.title}
+                  </h3>
+
+                  <p className="text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
+
                 </div>
+              );
 
-                <h3 className="text-xl font-semibold mb-3 text-gray-800">
-                  {feature.title}
-                </h3>
+              return feature.link ? (
+                <Link key={index} to={feature.link}>
+                  {Card}
+                </Link>
+              ) : (
+                <div key={index}>{Card}</div>
+              );
 
-                <p className="text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
-
-              </div>
-            ))}
+            })}
 
           </div>
         </div>
       </section>
 
-      {/* POURQUOI NOUS */}
+      {/* SECTION LEADER */}
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
 
@@ -200,6 +197,10 @@ const GestionBiens = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
               Leader de la gestion immobilière
             </h2>
+
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Ce qui fait d'IMMOPILOT la référence pour les propriétaires et les agences.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -215,7 +216,9 @@ const GestionBiens = () => {
                   {reason.title}
                 </h3>
 
-                <p className="text-gray-600">{reason.description}</p>
+                <p className="text-gray-600">
+                  {reason.description}
+                </p>
 
               </div>
             ))}
@@ -225,7 +228,7 @@ const GestionBiens = () => {
         </div>
       </section>
 
-      {/* CALL TO ACTION */}
+      {/* CTA */}
       <section className="bg-[#8A9BFF] py-20 px-6">
         <div className="max-w-4xl mx-auto text-center text-white">
 
@@ -239,7 +242,7 @@ const GestionBiens = () => {
 
           <Link
             to="/inscription"
-            className="bg-white text-[#8A9BFF] px-10 py-4 rounded-full font-semibold text-xl shadow-lg hover:shadow-xl transition"
+            className="bg-white text-[#8A9BFF] px-10 py-4 rounded-full font-semibold text-xl shadow-lg hover:shadow-xl transition transform hover:scale-105 inline-block"
           >
             Créer un compte gratuit
           </Link>
