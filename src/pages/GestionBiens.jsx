@@ -45,6 +45,7 @@ const GestionBiens = () => {
       title: "Suivi financier par bien",
       description:
         "Consultez les revenus locatifs, charges et taxes pour chaque bien et visualisez la rentabilité.",
+        link: "/suivi-financie",
     },
     {
       icon: <FaRuler className="text-[#8A9BFF] text-3xl" />,

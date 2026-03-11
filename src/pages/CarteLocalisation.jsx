@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import iconRetinaUrl from "leaflet/dist/images/marker-icon-2x.png";
+import iconUrl from "leaflet/dist/images/marker-icon.png";
+import shadowUrl from "leaflet/dist/images/marker-shadow.png";
 
-// Fix pour les icônes Leaflet (nécessaire avec webpack)
-delete L.Icon.Default.prototype._getIconUrl;
+
 L.Icon.Default.mergeOptions({
-  iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-  iconUrl: require("leaflet/dist/images/marker-icon.png"),
-  shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+  iconRetinaUrl,
+  iconUrl,
+  shadowUrl,
 });
 
 const LocationMarker = ({ onLocationSelect }) => {
@@ -27,7 +29,7 @@ const LocationMarker = ({ onLocationSelect }) => {
 const CarteLocalisation = ({ onLocationSelect }) => {
   return (
     <MapContainer
-      center={[46.603354, 1.888334]} // Centre de la France
+      center={[46.603354, 1.888334]}
       zoom={6}
       style={{ height: "400px", width: "100%", borderRadius: "0.5rem" }}
     >

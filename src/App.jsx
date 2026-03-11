@@ -37,6 +37,8 @@ function App() {
 
         <Route path="/ajouter-bien" element={<AjouterBien />} />
 
+        <Route path="/bien/:id/financier" element={<SuiviFinancier />} />
+
       </Routes>
     </BrowserRouter>
   );
