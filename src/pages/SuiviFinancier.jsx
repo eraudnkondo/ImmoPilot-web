@@ -25,7 +25,7 @@ import {
   Pie,
   Cell,
 } from "recharts";
-import HeaderGestionBiens from "../components/HeaderGestionBiens";
+import Header1 from "../components/Header1";
 import Footer from "../components/Footer";
 
 
@@ -87,7 +87,7 @@ const SuiviFinancier = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex flex-col bg-gray-100">
-        <HeaderGestionBiens />
+        <Header1 />
         <main className="flex-grow flex items-center justify-center">
           <div className="text-xl text-gray-600">Chargement...</div>
         </main>
@@ -104,7 +104,7 @@ const SuiviFinancier = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
-      <HeaderGestionBiens />
+      <Header1 />
 
       <main className="flex-grow container mx-auto px-4 py-8">
       
