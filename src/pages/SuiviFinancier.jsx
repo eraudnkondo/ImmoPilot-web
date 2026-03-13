@@ -28,7 +28,7 @@ import {
 import HeaderGestionBiens from "../components/HeaderGestionBiens";
 import Footer from "../components/Footer";
 
-// Couleurs pour les graphiques
+
 const COLORS = ["#8A9BFF", "#FFB347", "#4CAF50", "#FF6B6B"];
 
 const SuiviFinancier = () => {
@@ -96,7 +96,7 @@ const SuiviFinancier = () => {
     );
   }
 
-  // Calculs des indicateurs clés
+  
   const totalAnnualIncome = incomeHistory.reduce((sum, item) => sum + item.revenu, 0);
   const totalAnnualExpenses = expensesBreakdown.reduce((sum, item) => sum + item.value, 0) * 12; // approximation mensuelle
   const netAnnualIncome = totalAnnualIncome - totalAnnualExpenses;
@@ -107,7 +107,7 @@ const SuiviFinancier = () => {
       <HeaderGestionBiens />
 
       <main className="flex-grow container mx-auto px-4 py-8">
-        {/* En-tête avec retour */}
+      
         <div className="flex items-center mb-6">
           <button
             onClick={() => navigate(`/bien/${id}`)}
@@ -119,8 +119,6 @@ const SuiviFinancier = () => {
             Suivi financier : {bienNom}
           </h1>
         </div>
-
-        {/* Indicateurs clés (KPI) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <div className="bg-white rounded-lg shadow p-6">
             <div className="flex items-center justify-between mb-2">
@@ -159,9 +157,8 @@ const SuiviFinancier = () => {
           </div>
         </div>
 
-        {/* Graphiques */}
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Évolution des loyers */}
           <div className="bg-white rounded-lg shadow p-6">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-semibold">Évolution des loyers</h2>
@@ -206,8 +203,6 @@ const SuiviFinancier = () => {
               </LineChart>
             </ResponsiveContainer>
           </div>
-
-          {/* Répartition des charges */}
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-lg font-semibold mb-4">Répartition des charges</h2>
             <ResponsiveContainer width="100%" height={300}>
@@ -231,10 +226,7 @@ const SuiviFinancier = () => {
             </ResponsiveContainer>
           </div>
         </div>
-
-        {/* Détail des revenus et charges */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Dernières échéances de loyer */}
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-lg font-semibold mb-4">Derniers paiements</h2>
             <div className="space-y-3">
@@ -255,8 +247,6 @@ const SuiviFinancier = () => {
               </button>
             </div>
           </div>
-
-          {/* Dernières charges */}
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-lg font-semibold mb-4">Dernières charges</h2>
             <div className="space-y-3">
@@ -278,8 +268,6 @@ const SuiviFinancier = () => {
             </div>
           </div>
         </div>
-
-        {/* Bouton pour modifier/éditer */}
         <div className="mt-8 flex justify-end">
           <button
             onClick={() => navigate(`/bien/${id}/financier/editer`)}

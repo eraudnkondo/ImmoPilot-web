@@ -12,6 +12,9 @@ import GestionLocative from "./pages/GestionLocative";
 import GestionBiens from "./pages/GestionBiens"; 
 import GestionLocataires from './pages/GestionLocataires';
 import AjouterBien from "./pages/AjouterBien";
+import SuiviFinancier from "./pages/SuiviFinancier";
+import CaracteristiquesTechniques from "./pages/CaracteristiquesTechniques";
+import HistoriqueTravaux from "./pages/HistoriqueTravaux";
 
 function App() {
   return (
@@ -37,7 +40,11 @@ function App() {
 
         <Route path="/ajouter-bien" element={<AjouterBien />} />
 
-        <Route path="/bien/:id/financier" element={<SuiviFinancier />} />
+        <Route path="/suivi-financier" element={<SuiviFinancier />} />
+
+        <Route path="/caractéristiques-techniques" element={<CaracteristiquesTechniques />} />
+
+      <Route path="/historique-travaux" element={< HistoriqueTravaux />} />
 
       </Routes>
     </BrowserRouter>

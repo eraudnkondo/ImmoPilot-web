@@ -41,23 +41,25 @@ const GestionBiens = () => {
         "Téléchargez et organisez plusieurs photos par bien, avec possibilité de créer des visites virtuelles.",
     },
     {
-      icon: <FaEuroSign className="text-[#8A9BFF] text-3xl" />,
-      title: "Suivi financier par bien",
-      description:
-        "Consultez les revenus locatifs, charges et taxes pour chaque bien et visualisez la rentabilité.",
-        link: "/suivi-financie",
+       icon: <FaEuroSign className="text-[#8A9BFF] text-3xl" />,
+  title: "Suivi financier par bien",
+  description:
+    "Consultez les revenus locatifs, charges et taxes pour chaque bien et visualisez la rentabilité.",
+  link: "/suivi-financier",
     },
     {
       icon: <FaRuler className="text-[#8A9BFF] text-3xl" />,
       title: "Caractéristiques techniques",
       description:
         "Stockez les surfaces et diagnostics techniques ainsi que les documents associés.",
+        link: "/caractéristiques-techniques",
     },
     {
       icon: <FaCalendarAlt className="text-[#8A9BFF] text-3xl" />,
       title: "Historique et travaux",
       description:
         "Gardez une trace des travaux effectués et de l’évolution de valeur du bien.",
+        link: "/historique-travaux",
     },
   ];
 
