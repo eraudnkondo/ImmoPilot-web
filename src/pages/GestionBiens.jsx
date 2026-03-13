@@ -10,10 +10,6 @@ import {
   FaCalendarAlt,
   FaArrowRight,
   FaBuilding,
-  FaTrophy,
-  FaShieldAlt,
-  FaChartLine,
-  FaUsers,
 } from "react-icons/fa";
 
 const GestionBiens = () => {
@@ -53,7 +49,7 @@ const GestionBiens = () => {
       <HeaderGestionBiens />
 
       {/* HERO */}
-      <section className="relative bg-gradient-to-br from-[#8A9BFF] to-[#6F8BFF] text-white py-20 px-6 overflow-hidden">
+      <section className="relative bg-linear-to-br from-[#8A9BFF] to-[#6F8BFF] text-white py-20 px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <FaBuilding className="w-full h-full text-white" />
         </div>
@@ -73,11 +69,11 @@ const GestionBiens = () => {
               className="bg-white text-[#6F8BFF] px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition flex items-center justify-center gap-2"
             >
               Commencer <FaArrowRight />
-       </Link>
+            </Link>
           </div>
         </div>
       </section>
-      
+
       {/* FEATURES */}
       <section className="bg-gray-100 py-20 px-6">
         <div className="max-w-6xl mx-auto">
@@ -86,7 +82,6 @@ const GestionBiens = () => {
             Gérer vos biens facilement
           </h2>
 
-          {/* GRID */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
             {features.map((feature, index) => {
@@ -122,8 +117,6 @@ const GestionBiens = () => {
           </div>
         </div>
       </section>
-
-
 
       <Footer />
     </>
