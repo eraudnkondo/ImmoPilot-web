@@ -46,7 +46,8 @@ function App() {
         <Route path="/caractéristiques-techniques" element={<CaracteristiquesTechniques />} />
 
       <Route path="/historique-travaux" element={< HistoriqueTravaux />} />
-      <Route path="/fichelocataires" element={<FicheLocataire />} />
+
+      <Route path="/fiche-locataires" element={<FicheLocataire />} />
 
       </Routes>
     </BrowserRouter>

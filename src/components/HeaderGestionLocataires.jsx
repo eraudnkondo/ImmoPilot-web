@@ -43,7 +43,7 @@ const HeaderGestionLocataires = () => {
       
         <Link
           to="/"
-          className="hidden md:flex items-center gap-3  text-gray-800 px-6 py-3 rounded-full hover:bg-[#6F8BFF] transition transform hover:scale-105 shadow-md text-lg font-semibold"
+          className="hidden md:flex items-center gap-3  text-gray-800 px-6 py-3  hover:bg-[#6F8BFF] transition transform hover:scale-105 shadow-md text-lg font-semibold"
         >
           <FaArrowLeft className="text-lg" />
           ACCEUIL
