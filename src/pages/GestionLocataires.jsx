@@ -15,7 +15,7 @@ const GestionLocataires = () => {
       title: "Fiches locataires",
       description:
         "Consultez et gérez les informations personnelles de chaque locataire : nom, prénom, coordonnées, situation familiale, etc.",
-        link: "/fiche-locataire",
+      link: "/fiche-locataire",
     },
     {
       icon: <FaIdCard className="text-[#8A9BFF] text-3xl" />,
@@ -83,7 +83,7 @@ const GestionLocataires = () => {
     <>
       <HeaderGestionLocataires /> 
 
-     
+      {/* Hero */}
       <section className="relative bg-gradient-to-br from-[#8A9BFF] to-[#6F8BFF] text-white py-20 px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <FaBuilding className="w-full h-full text-white" />
@@ -122,7 +122,7 @@ const GestionLocataires = () => {
         </div>
       </section>
 
-      
+      {/* Features / Outils */}
       <section className="bg-gray-100 py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4">
@@ -133,23 +133,37 @@ const GestionLocataires = () => {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
-              >
-                <div className="w-14 h-14 bg-[#8A9BFF]/10 rounded-xl flex items-center justify-center mb-6">
-                  {feature.icon}
+            {features.map((feature, index) =>
+              feature.link ? (
+                <Link
+                  key={index}
+                  to={feature.link}
+                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 block"
+                >
+                  <div className="w-14 h-14 bg-[#8A9BFF]/10 rounded-xl flex items-center justify-center mb-6">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-800">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                </Link>
+              ) : (
+                <div
+                  key={index}
+                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+                >
+                  <div className="w-14 h-14 bg-[#8A9BFF]/10 rounded-xl flex items-center justify-center mb-6">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-800">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-800">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
       </section>
 
-      
+      {/* Leader Reasons */}
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
@@ -175,7 +189,7 @@ const GestionLocataires = () => {
         </div>
       </section>
 
-      
+      {/* Call to Action */}
       <section className="bg-[#8A9BFF] py-20 px-6">
         <div className="max-w-4xl mx-auto text-center text-white">
           <h2 className="text-4xl font-bold mb-6">Prêt à simplifier la gestion de vos locataires ?</h2>
