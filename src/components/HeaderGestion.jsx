@@ -47,13 +47,13 @@ const HeaderGestion = () => {
             Comment ça marche
           </NavLink>
           <NavLink to="/#testimonials" style={styles.mobileLink} onClick={closeMenu}>
-            Témoignages / Résultats
-          </NavLink>
-          <NavLink to="/espace-client" style={styles.mobileLink} onClick={closeMenu}>
             Espace client
           </NavLink>
+          <NavLink to="/espace-client" style={styles.mobileLink} onClick={closeMenu}>
+            Espace agence 
+          </NavLink>
           <NavLink to="/espace-agence" style={styles.mobileLink} onClick={closeMenu}>
-            Espace agence / Propriétaire
+            Résultats
           </NavLink>
         </div>
       )}
@@ -66,8 +66,8 @@ const styles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '1rem 2rem',
-    backgroundColor: '#f3f4f6',
+    padding: '1.2rem 2.5rem',
+    backgroundColor: '#f3f4f6', 
     borderBottom: '1px solid #e5e7eb',
     position: 'sticky',
     top: 0,
@@ -75,20 +75,21 @@ const styles = {
   },
 
   logo: {
-    fontSize: '2rem',
+    fontSize: '2.3rem',
     fontWeight: 'bold',
     letterSpacing: '3px',
     color: '#b8860b',
     textTransform: 'uppercase',
     textDecoration: 'none',
+    marginLeft: '4.5rem',
   },
 
   menuButton: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    width: '25px',
-    height: '18px',
+    width: '30px',
+    height: '22px',
     background: 'transparent',
     border: 'none',
     cursor: 'pointer',
@@ -96,57 +97,68 @@ const styles = {
 
   bar: {
     width: '100%',
-    height: '3px',
+    height: '4px',
     backgroundColor: '#374151',
-    borderRadius: '2px',
+    borderRadius: '3px',
     transition: 'all 0.3s ease',
   },
 
-  bar1Open: { transform: 'rotate(45deg) translate(5px, 5px)' },
-  bar2Open: { opacity: 0 },
-  bar3Open: { transform: 'rotate(-45deg) translate(5px, -5px)' },
-
-  mobileMenu: {
-    position: 'absolute',
-    top: '70px',
-    right: 0,
-    width: '500px',
-    maxWidth: 'calc(100vw - 2rem)',
-    backgroundColor: '#f3f4f6',
-    borderLeft: '1px solid #e5e7eb',
-    borderBottom: '1px solid #e5e7eb',
-    borderRadius: '0 0 8px 8px',
-    padding: '1.5rem',
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '1rem',
-    boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
+  bar1Open: {
+    transform: 'rotate(45deg) translate(6px, 6px)',
   },
 
+  bar2Open: {
+    opacity: 0,
+  },
+
+  bar3Open: {
+    transform: 'rotate(-45deg) translate(6px, -6px)',
+  },
+
+  
+  mobileMenu: {
+    position: 'absolute',
+    top: '80px',
+    right: '10px',
+    width: '600px',
+    maxWidth: '95vw',
+    backgroundColor: 'rgba(255,255,255,0.0)',
+    borderRadius: '12px',
+    padding: '2rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1.2rem',
+    boxShadow: '0 8px 20px rgba(0,0,0,0.15)',
+    backdropFilter: 'blur(10px)', 
+  },
+
+  
   mobileLink: {
     textDecoration: 'none',
-    padding: '0.9rem 1.2rem',
-    borderRadius: '8px',
-    fontWeight: 500,
+    padding: '1.1rem 1.5rem',
+    borderRadius: '10px',
+    fontWeight: 600,
     color: '#374151',
-    border: '1px solid #d1d5db',
+    backgroundColor: 'rgba(255,255,255,0.3)', 
     textAlign: 'center',
-    transition: 'all 0.3s',
-    fontSize: '1.2rem',
+    fontSize: '1.25rem',
+    transition: 'all 0.3s ease',
+    border: '1px solid rgba(229,231,235,0.7)',
   },
 
   subMenu: {
     display: 'flex',
     flexDirection: 'column',
-    marginBottom: '0.5rem',
+    gap: '0.5rem',
   },
 
   subMenuTitle: {
     fontWeight: 'bold',
-    padding: '0.9rem 1.2rem',
+    padding: '0.8rem 1rem',
     color: '#1f2937',
-    fontSize: '1.3rem',
+    fontSize: '1.4rem',
   },
+
 };
 
 export default HeaderGestion;

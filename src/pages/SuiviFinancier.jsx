@@ -40,14 +40,14 @@ const SuiviFinancier = () => {
   const [financialData, setFinancialData] = useState(null);
   const [incomeHistory, setIncomeHistory] = useState([]);
   const [expensesBreakdown, setExpensesBreakdown] = useState([]);
-  const [period, setPeriod] = useState("year"); // month, year
+  const [period, setPeriod] = useState("year"); 
 
-  // Simuler le chargement des données (remplacer par appel API)
+  
   useEffect(() => {
-    // Données fictives pour la démonstration
+    
     const mockBien = {
       id,
-      nom: "Appartement Centre-ville",
+
       loyer: 1200,
       charges: 150,
       taxes: 80,
@@ -98,7 +98,7 @@ const SuiviFinancier = () => {
 
   
   const totalAnnualIncome = incomeHistory.reduce((sum, item) => sum + item.revenu, 0);
-  const totalAnnualExpenses = expensesBreakdown.reduce((sum, item) => sum + item.value, 0) * 12; // approximation mensuelle
+  const totalAnnualExpenses = expensesBreakdown.reduce((sum, item) => sum + item.value, 0) * 12; 
   const netAnnualIncome = totalAnnualIncome - totalAnnualExpenses;
   const profitability = ((netAnnualIncome / totalAnnualIncome) * 100).toFixed(1);
 
@@ -108,17 +108,9 @@ const SuiviFinancier = () => {
 
       <main className="flex-grow container mx-auto px-4 py-8">
       
-        <div className="flex items-center mb-6">
-          <button
-            onClick={() => navigate(`/bien/${id}`)}
-            className="flex items-center text-gray-600 hover:text-amber-600 transition mr-4"
-          >
-            <FiArrowLeft className="mr-1" /> Retour
-          </button>
-          <h1 className="text-2xl font-bold text-gray-800">
-            Suivi financier : {bienNom}
-          </h1>
-        </div>
+        <h2 className="text-4xl font-semibold text-gray-700 mb-6">
+          Tableau financier
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <div className="bg-white rounded-lg shadow p-6">
             <div className="flex items-center justify-between mb-2">

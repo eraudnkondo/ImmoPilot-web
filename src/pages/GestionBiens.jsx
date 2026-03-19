@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 
 import {
   FaHome,
-  FaMapMarkerAlt,
-  FaImages,
   FaEuroSign,
   FaRuler,
   FaCalendarAlt,
@@ -29,37 +27,25 @@ const GestionBiens = () => {
       link: "/ajouter-bien",
     },
     {
-      icon: <FaMapMarkerAlt className="text-[#8A9BFF] text-3xl" />,
-      title: "Localisation précise",
+      icon: <FaEuroSign className="text-[#8A9BFF] text-3xl" />,
+      title: "Suivi financier par bien",
       description:
-        "Géolocalisez chaque bien sur une carte interactive et visualisez les quartiers et commodités à proximité.",
-    },
-    {
-      icon: <FaImages className="text-[#8A9BFF] text-3xl" />,
-      title: "Gestion des photos",
-      description:
-        "Téléchargez et organisez plusieurs photos par bien, avec possibilité de créer des visites virtuelles.",
-    },
-    {
-       icon: <FaEuroSign className="text-[#8A9BFF] text-3xl" />,
-  title: "Suivi financier par bien",
-  description:
-    "Consultez les revenus locatifs, charges et taxes pour chaque bien et visualisez la rentabilité.",
-  link: "/suivi-financier",
+        "Consultez les revenus locatifs, charges et taxes pour chaque bien et visualisez la rentabilité.",
+      link: "/suivi-financier",
     },
     {
       icon: <FaRuler className="text-[#8A9BFF] text-3xl" />,
       title: "Caractéristiques techniques",
       description:
         "Stockez les surfaces et diagnostics techniques ainsi que les documents associés.",
-        link: "/caractéristiques-techniques",
+      link: "/caractéristiques-techniques",
     },
     {
       icon: <FaCalendarAlt className="text-[#8A9BFF] text-3xl" />,
       title: "Historique et travaux",
       description:
         "Gardez une trace des travaux effectués et de l’évolution de valeur du bien.",
-        link: "/historique-travaux",
+      link: "/historique-travaux",
     },
   ];
 
@@ -97,7 +83,7 @@ const GestionBiens = () => {
     <>
       <HeaderGestionBiens />
 
-      {/* HERO */}
+      
       <section className="relative bg-gradient-to-br from-[#8A9BFF] to-[#6F8BFF] text-white py-20 px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <FaBuilding className="w-full h-full text-white" />
@@ -110,7 +96,7 @@ const GestionBiens = () => {
 
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-10">
             Centralisez toutes les informations de vos propriétés : fiches,
-            photos, documents techniques et suivi financier.
+            documents techniques et suivi financier.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -128,7 +114,7 @@ const GestionBiens = () => {
         </div>
       </section>
 
-      {/* STATS */}
+      
       <section className="bg-gray-50 py-16 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
@@ -144,7 +130,7 @@ const GestionBiens = () => {
         </div>
       </section>
 
-      {/* FEATURES */}
+      
       <section className="bg-gray-100 py-16 px-6">
         <div className="max-w-7xl mx-auto">
 
@@ -156,12 +142,13 @@ const GestionBiens = () => {
             Des outils simples et complets pour gérer votre patrimoine immobilier.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
             {features.map((feature, index) => {
 
               const Card = (
-                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 h-full flex flex-col">
 
                   <div className="w-14 h-14 bg-[#8A9BFF]/10 rounded-xl flex items-center justify-center mb-6">
                     {feature.icon}
@@ -171,7 +158,7 @@ const GestionBiens = () => {
                     {feature.title}
                   </h3>
 
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed flex-grow">
                     {feature.description}
                   </p>
 
@@ -179,7 +166,7 @@ const GestionBiens = () => {
               );
 
               return feature.link ? (
-                <Link key={index} to={feature.link}>
+                <Link key={index} to={feature.link} className="block">
                   {Card}
                 </Link>
               ) : (
@@ -192,7 +179,7 @@ const GestionBiens = () => {
         </div>
       </section>
 
-      {/* SECTION LEADER */}
+
       <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto">
 

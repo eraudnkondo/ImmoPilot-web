@@ -15,6 +15,7 @@ const GestionLocataires = () => {
       title: "Fiches locataires",
       description:
         "Consultez et gérez les informations personnelles de chaque locataire : nom, prénom, coordonnées, situation familiale, etc.",
+        link: "/fiche-locataire",
     },
     {
       icon: <FaIdCard className="text-[#8A9BFF] text-3xl" />,

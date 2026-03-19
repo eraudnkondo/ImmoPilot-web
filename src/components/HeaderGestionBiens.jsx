@@ -24,23 +24,7 @@ const HeaderGestionLocataires = () => {
           IMMOPILOT
         </Link>
 
-      
-        <nav className="hidden md:flex gap-8 items-center">
-          <NavLink to="/GestionBiens" className={navStyle}>
-            Tableau de bord
-          </NavLink>
-          <NavLink to="/Mes biens" className={navStyle}>
-            Mes biens
-          </NavLink>
-          <NavLink to="/Locatairs" className={navStyle}>
-            Locataires
-          </NavLink>
-          <NavLink to="/Paiements" className={navStyle}>
-            Paiements
-          </NavLink>
-        </nav>
-
-      
+        
         <Link
           to="/"
           className="hidden md:flex items-center gap-3  text-gray-800 px-6 py-3  hover:bg-[#6F8BFF] transition transform hover:scale-105 shadow-md text-lg font-semibold"

@@ -140,7 +140,7 @@ const AjouterBien = () => {
               {errors.nom && <p className="mt-1 text-sm text-red-600">{errors.nom}</p>}
             </div>
 
-            {/* Adresse */}
+            
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Adresse complète *

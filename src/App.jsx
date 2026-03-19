@@ -15,6 +15,7 @@ import AjouterBien from "./pages/AjouterBien";
 import SuiviFinancier from "./pages/SuiviFinancier";
 import CaracteristiquesTechniques from "./pages/CaracteristiquesTechniques";
 import HistoriqueTravaux from "./pages/HistoriqueTravaux";
+import FicheLocataire from "./pages/FicheLocataire";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/caractéristiques-techniques" element={<CaracteristiquesTechniques />} />
 
       <Route path="/historique-travaux" element={< HistoriqueTravaux />} />
+      <Route path="/fichelocataires" element={<FicheLocataire />} />
 
       </Routes>
     </BrowserRouter>
