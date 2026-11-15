@@ -1,62 +1,198 @@
-import React, { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa";
 
-const HeaderGestionLocataires = () => {
+import React, { useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+
+const HeaderGestionBiens = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
   const closeMenu = () => setMenuOpen(false);
 
-  const navStyle = ({ isActive }) =>
-    `relative font-semibold text-xl transition pb-1
-     ${isActive ? "text-[#8A9BFF] after:w-full" : "text-gray-700 after:w-0 hover:after:w-full"}
-     after:content-[''] after:absolute after:left-0 after:-bottom-1
-     after:h-[3px] after:bg-[#8A9BFF] after:transition-all`;
-
   return (
-    <>
-      <header className="flex justify-between items-center px-6 py-5 bg-gray-100 border-b border-gray-200 sticky top-0 z-50">
-        
-       
-        <Link
-          to="/"
-          className="text-4xl f#b8860b tracking-widest text-amber-600 uppercase no-underline ml-18"
-        >
-          IMMOPILOT
-        </Link>
+    <header style={styles.header}>
 
-        
-        <Link
-          to="/"
-          className="hidden md:flex items-center gap-3  text-gray-800 px-6 py-3  hover:bg-[#6F8BFF] transition transform hover:scale-105 shadow-md text-lg font-semibold"
-        >
-          <FaArrowLeft className="text-lg" />
-          ACCEUIL
-        </Link>
+      {/* LOGO */}
+      <Link to="/" style={styles.logo} onClick={closeMenu}>
+        IMMOPILOT
+      </Link>
 
-    
-        <button
-          className="md:hidden flex flex-col justify-between w-8 h-6 bg-transparent border-none cursor-pointer"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <div
-            className={`w-full h-0.5 bg-gray-800 rounded transition-all duration-300 ${
-              menuOpen ? "rotate-45 translate-y-1.5" : ""
-            }`}
-          />
-          <div
-            className={`w-full h-0.5 bg-gray-800 rounded transition-all duration-300 ${
-              menuOpen ? "opacity-0" : ""
-            }`}
-          />
-          <div
-            className={`w-full h-0.5 bg-gray-800 rounded transition-all duration-300 ${
-              menuOpen ? "-rotate-45 -translate-y-1.5" : ""
-            }`}
-          />
-        </button>
-      </header>
-    </>
+      {/* BOUTON HAMBURGER */}
+      <button
+        type="button"
+        style={styles.menuButton}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+        aria-expanded={menuOpen}
+        aria-controls="mobile-menu"
+      >
+        <div style={{
+          ...styles.bar,
+          ...(menuOpen ? styles.bar1Open : {})
+        }} />
+
+        <div style={{
+          ...styles.bar,
+          ...(menuOpen ? styles.bar2Open : {})
+        }} />
+
+        <div style={{
+          ...styles.bar,
+          ...(menuOpen ? styles.bar3Open : {})
+        }} />
+      </button>
+
+      {/* MENU DÉROULANT */}
+      {menuOpen && (
+        <nav id="mobile-menu" style={styles.mobileMenu}>
+
+          <NavLink to="/" style={styles.mobileLink} onClick={closeMenu}>
+            Accueil
+          </NavLink>
+
+          <div style={styles.subMenu}>
+            <span style={styles.subMenuTitle}>Nos services</span>
+
+            <NavLink to="/gestionlocative" style={styles.mobileLink} onClick={closeMenu}>
+              Gestion locative
+            </NavLink>
+
+            <NavLink to="/" style={styles.mobileLink} onClick={closeMenu}>
+              Vente de biens
+            </NavLink>
+
+            <NavLink to="/" style={styles.mobileLink} onClick={closeMenu}>
+              Suivi de patrimoine
+            </NavLink>
+          </div>
+
+          <a href="/#howItWorks" style={styles.mobileLink} onClick={closeMenu}>
+            Comment ça marche
+          </a>
+
+          <a href="/#testimonials" style={styles.mobileLink} onClick={closeMenu}>
+            Témoignages
+          </a>
+
+          <NavLink to="/espace-client" style={styles.mobileLink} onClick={closeMenu}>
+            Espace client
+          </NavLink>
+
+          <NavLink to="/espace-agence" style={styles.mobileLink} onClick={closeMenu}>
+            Espace agence
+          </NavLink>
+
+          <NavLink to="/connexion" style={styles.mobileLink} onClick={closeMenu}>
+            Connexion
+          </NavLink>
+
+          <NavLink to="/inscription" style={styles.mobileLink} onClick={closeMenu}>
+            Inscription
+          </NavLink>
+
+          <NavLink to="/contact" style={styles.mobileLink} onClick={closeMenu}>
+            Contact
+          </NavLink>
+
+        </nav>
+      )}
+    </header>
   );
 };
 
-export default HeaderGestionLocataires;
+const styles = {
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '1.2rem 2.5rem',
+    backgroundColor: '#f3f4f6',
+    borderBottom: '1px solid #e5e7eb',
+    position: 'sticky',
+    top: 0,
+    zIndex: 1000,
+  },
+
+  logo: {
+    fontSize: '2.3rem',
+    fontWeight: 'bold',
+    letterSpacing: '3px',
+    color: '#b8860b',
+    textTransform: 'uppercase',
+    textDecoration: 'none',
+    marginLeft: '4.5rem',
+  },
+
+  menuButton: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    width: '30px',
+    height: '22px',
+    background: 'transparent',
+    border: 'none',
+    cursor: 'pointer',
+  },
+
+  bar: {
+    width: '100%',
+    height: '4px',
+    backgroundColor: '#374151',
+    borderRadius: '3px',
+    transition: 'all 0.3s ease',
+  },
+
+  bar1Open: {
+    transform: 'rotate(45deg) translate(6px, 6px)',
+  },
+
+  bar2Open: {
+    opacity: 0,
+  },
+
+  bar3Open: {
+    transform: 'rotate(-45deg) translate(6px, -6px)',
+  },
+
+  mobileMenu: {
+    position: 'absolute',
+    top: '80px',
+    right: '10px',
+    width: '600px',
+    maxWidth: '95vw',
+    backgroundColor: 'rgba(255,255,255,0.0)',
+    borderRadius: '12px',
+    padding: '2rem',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1.2rem',
+    boxShadow: '0 8px 20px rgba(0,0,0,0.15)',
+    backdropFilter: 'blur(10px)',
+  },
+
+  mobileLink: {
+    textDecoration: 'none',
+    padding: '1.1rem 1.5rem',
+    borderRadius: '10px',
+    fontWeight: 600,
+    color: '#374151',
+    backgroundColor: 'rgba(255,255,255,0.3)',
+    textAlign: 'center',
+    fontSize: '1.25rem',
+    transition: 'all 0.3s ease',
+    border: '1px solid rgba(229,231,235,0.7)',
+  },
+
+  subMenu: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '0.5rem',
+  },
+
+  subMenuTitle: {
+    fontWeight: 'bold',
+    padding: '0.8rem 1rem',
+    color: '#1f2937',
+    fontSize: '1.4rem',
+  },
+};
+
+export default HeaderGestionBiens;
