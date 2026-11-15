@@ -73,7 +73,7 @@ const FicheLocataire = () => {
     return (
       <div className="min-h-screen flex flex-col bg-gray-100">
         <HeaderGestionBiens />
-        <main className="flex-grow flex items-center justify-center">
+        <main className="grow flex items-center justify-center">
           <span className="text-xl text-gray-600">Chargement...</span>
         </main>
         <Footer />
@@ -84,7 +84,7 @@ const FicheLocataire = () => {
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
       <HeaderGestionBiens />
-      <main className="flex-grow container mx-auto px-6 py-8">
+      <main className="grow container mx-auto px-6 py-8">
         <div className="flex items-center justify-between mb-8">
           <button
             onClick={() => navigate("/gestion-locataires")}

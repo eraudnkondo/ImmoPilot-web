@@ -88,7 +88,7 @@ const SuiviFinancier = () => {
     return (
       <div className="min-h-screen flex flex-col bg-gray-100">
         <HeaderGestionBiens />
-        <main className="flex-grow flex items-center justify-center">
+        <main className="grow flex items-center justify-center">
           <div className="text-xl text-gray-600">Chargement...</div>
         </main>
         <Footer />
@@ -106,7 +106,7 @@ const SuiviFinancier = () => {
     <div className="min-h-screen flex flex-col bg-gray-100">
       <HeaderGestionBiens />
 
-      <main className="flex-grow container mx-auto px-4 py-8">
+      <main className="grow container mx-auto px-4 py-8">
       
         <h2 className="text-4xl font-semibold text-gray-700 mb-6">
           Tableau financier
